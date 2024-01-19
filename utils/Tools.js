@@ -1,9 +1,10 @@
-export const timeoutPromise = (url) => {
+export const timeoutPromise = (url, setButtonActive) => {
   return new Promise((resolve, reject) => {
     const timeoutId = setTimeout(() => {
       // reject(new Error('Timeout, Server is not responding'));
       reject({ error: "Timeout", message: "Server is not responding" });
-    }, 11 * 1000);
+      setButtonActive(true);
+    }, 25 * 1000);
     url.then(
       (res) => {
         clearTimeout(timeoutId);

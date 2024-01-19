@@ -32,6 +32,7 @@ export const Header = () => {
       fetch(`${API_URL}/product/getByGoogle/${fabricId}`, {
         method: "GET",
       }),
+      setButtonActive,
     );
 
     // console.log(JSON.stringify(response, null, 2));
@@ -47,7 +48,7 @@ export const Header = () => {
           index === self.findIndex((t) => t.siteAddress === value.siteAddress)
         );
       });
-      console.log(filteredDups);
+      filteredDups.sort((a, b) => a.price - b.price);
       setButtonActive(true);
 
       return filteredDups;
