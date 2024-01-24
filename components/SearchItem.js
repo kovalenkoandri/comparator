@@ -11,7 +11,6 @@ import { Ionicons } from "@expo/vector-icons";
 import * as Linking from "expo-linking";
 
 export default SearchItem = ({ item }) => {
-  console.log(item);
   return (
     <View style={styles.container}>
       <TouchableOpacity

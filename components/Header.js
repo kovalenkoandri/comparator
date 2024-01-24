@@ -25,11 +25,11 @@ export const Header = () => {
   const [notFound, setNotFound] = useState(false);
   const [products, setProducts] = useState([]);
   const [isButtonActive, setButtonActive] = useState(true);
-  const fetchProductByGoogle = async (fabricId) => {
+  const fetchProductByGoogle = async (request) => {
     setButtonActive(false);
     let data = [];
     const response = await timeoutPromise(
-      fetch(`${API_URL}/product/getByGoogle/${fabricId}`, {
+      fetch(`${API_URL}/?url=${request}`, {
         method: "GET",
       }),
       setButtonActive,
@@ -38,7 +38,10 @@ export const Header = () => {
     // console.log(JSON.stringify(response, null, 2));
 
     const responseGoogle = await response.json();
-    data = responseGoogle.data;
+    data = responseGoogle.map((item, index) => ({
+      ...item,
+      _id: index, 
+    }));
     data.length === 0 ? setNotFound(true) : setNotFound(false);
 
     setProducts((prevProducts) => {
