@@ -7,7 +7,6 @@ import {
   Text,
 } from "react-native";
 import Colors from "../utils/Colors";
-import { Ionicons } from "@expo/vector-icons";
 import * as Linking from "expo-linking";
 
 export default SearchItem = ({ item }) => {
@@ -17,13 +16,8 @@ export default SearchItem = ({ item }) => {
         onPress={() => Linking.openURL(item.siteAddress)}
         style={styles.btn}
       >
-        {/* <Ionicons name="search" size={72} color={Colors.dark} /> */}
-        <Text variant="titleLarge" style={styles.name}>
-          Price: {item.price}
-        </Text>
-        <Text variant="titleLarge" style={styles.name}>
-          {item.siteAddress}
-        </Text>
+        <Text style={styles.name}>Price: {item.price}</Text>
+        <Text style={styles.name}>{item.siteAddress}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -34,7 +28,9 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight,
     borderBottomWidth: 1,
     borderBottomColor: Colors.light_grey,
-    alignItems: "stretch",
+    marginLeft: "auto",
+    marginRight: "auto",
+    width: '96%'
   },
   name: {
     color: Colors.dark,

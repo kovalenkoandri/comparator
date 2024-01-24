@@ -40,7 +40,7 @@ export const Header = () => {
     const responseGoogle = await response.json();
     data = responseGoogle.map((item, index) => ({
       ...item,
-      _id: index, 
+      _id: index,
     }));
     data.length === 0 ? setNotFound(true) : setNotFound(false);
 
@@ -65,7 +65,7 @@ export const Header = () => {
     }
   };
   return (
-    <ScrollView>
+    <View>
       <View style={styles.input_box}>
         <TextInput
           maxLength={20}
@@ -99,6 +99,8 @@ export const Header = () => {
         ) : (
           <View
             style={{
+              width,
+              flex: 1,
               marginHorizontal: 20,
               marginTop: Platform.OS === "android" ? 0 : height < 668 ? 0 : 60,
             }}
@@ -126,14 +128,12 @@ export const Header = () => {
           </View>
         )}
       </TouchableWithoutFeedback>
-    </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  flatList: {
-    // height: height,
-  },
+  flatList: {},
   input_box: {
     flexDirection: "column",
     alignItems: "center",
