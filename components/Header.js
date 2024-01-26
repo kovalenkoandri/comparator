@@ -72,14 +72,17 @@ export const Header = () => {
     setFromValue(text);
     if (parseFloat(text)) {
       setFilteredProducts(() => {
-        const filteredTo = products.filter((el) => {
-          return parseFloat(el.price) <= parseFloat(toValue);
-        });
-        const filteredFrom = filteredTo.filter((el) => {
+        const filteredFrom = products.filter((el) => {
           return parseFloat(el.price) >= parseFloat(text);
         });
-        filteredFrom.sort((a, b) => a.price - b.price);
-        return filteredFrom;
+        const filteredTo = filteredFrom.filter((el) => {
+          if (!toValue) {
+            return parseFloat(el.price) <= parseFloat('999999999999');
+          }
+          return parseFloat(el.price) <= parseFloat(toValue);
+        });
+        filteredTo.sort((a, b) => a.price - b.price);
+        return filteredTo;
       });
       setFiltered(true);
     } else {
@@ -104,6 +107,9 @@ export const Header = () => {
           return parseFloat(el.price) <= parseFloat(text);
         });
         const filteredFrom = filteredTo.filter((el) => {
+          if (!fromValue) {
+            return parseFloat(el.price) >= parseFloat("0");
+          }
           return parseFloat(el.price) >= parseFloat(fromValue);
         });
         filteredFrom.sort((a, b) => a.price - b.price);
