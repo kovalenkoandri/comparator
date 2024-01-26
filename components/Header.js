@@ -1,14 +1,11 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Dimensions,
   StyleSheet,
   View,
   FlatList,
-  Platform,
   Keyboard,
   TouchableWithoutFeedback,
-  Button,
-  ScrollView,
   TextInput,
   Text,
   TouchableOpacity,
@@ -18,7 +15,7 @@ import SearchItem from "./SearchItem";
 import HeaderTextExample from "./TextExample";
 import { timeoutPromise } from "../utils/Tools";
 import { API_URL } from "../utils/Config";
-const { height, width } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 export const Header = () => {
   const [fromValue, setFromValue] = useState("");
@@ -77,7 +74,7 @@ export const Header = () => {
         });
         const filteredTo = filteredFrom.filter((el) => {
           if (!toValue) {
-            return parseFloat(el.price) <= parseFloat('999999999999');
+            return parseFloat(el.price) <= parseFloat("999999999999");
           }
           return parseFloat(el.price) <= parseFloat(toValue);
         });

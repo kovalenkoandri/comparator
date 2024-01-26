@@ -2,29 +2,33 @@
   "expo": {
     "name": "comparator",
     "slug": "comparator",
-    "version": "1.0.0",
-    "orientation": "portrait",
+    "privacy": "public",
+    "platforms": ["android"],
+    "orientation": "default",
+    "githubUrl": "https://github.com/kovalenkoandri/price-comparator-front",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#353542"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
+    "assetBundlePatterns": ["**/*"],
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+      "package": "com.kovalenkoandrii.comparator",
+      "versionCode": 1
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "description": "Price comparator",
+    "owner": "kovalenkoandrii",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "plugins": [
+      [
+        "expo-screen-orientation",
+        {
+          "initialOrientation": "DEFAULT"
+        }
+      ]
+    ]
   }
 }
