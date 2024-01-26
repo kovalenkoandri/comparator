@@ -26,6 +26,8 @@ export const Header = () => {
   const [keyword, setKeyword] = useState("");
   const [notFound, setNotFound] = useState(false);
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filtered, setFiltered] = useState(false);
   const [isButtonActive, setButtonActive] = useState(true);
   const fetchProductByGoogle = async (request) => {
     setButtonActive(false);
@@ -66,6 +68,37 @@ export const Header = () => {
       console.log("error fetching products" + err);
     }
   };
+  const handleFrom = (text) => {
+    setFromValue(text);
+    if (parseFloat(text)) {
+      setFilteredProducts(() => {
+        const filteredFrom = products.filter((el) => {
+          return parseFloat(el.price) >= parseFloat(text);
+        });
+        filteredFrom.sort((a, b) => a.price - b.price);
+        return filteredFrom;
+      });
+      setFiltered(true);
+    } else {
+      setFiltered(false);
+    }
+  };
+  const handleTo = (text) => {
+    setToValue(text);
+    if (parseFloat(text) || parseFloat(text) === 0) {
+      setFilteredProducts(() => {
+        const filteredFrom = products.filter((el) => {
+          console.log(el.price);
+          return parseFloat(el.price) <= parseFloat(text);
+        });
+        filteredFrom.sort((a, b) => a.price - b.price);
+        return filteredFrom;
+      });
+      setFiltered(true);
+    } else {
+      setFiltered(false);
+    }
+  };
   return (
     <View>
       <View style={styles.input_box}>
@@ -85,7 +118,7 @@ export const Header = () => {
             placeholder="From"
             keyboardType="numeric"
             value={fromValue}
-            onChangeText={(text) => setFromValue(text)}
+            onChangeText={handleFrom}
           />
 
           <TextInput
@@ -94,7 +127,7 @@ export const Header = () => {
             placeholder="To"
             keyboardType="numeric"
             value={toValue}
-            onChangeText={(text) => setToValue(text)}
+            onChangeText={handleTo}
           />
 
           <TouchableOpacity
@@ -136,7 +169,7 @@ export const Header = () => {
               <FlatList
                 nestedScrollEnabled={true}
                 style={styles.flatList}
-                data={products}
+                data={filtered ? filteredProducts : products}
                 keyExtractor={(item) => item._id}
                 renderItem={({ item }) => {
                   return <SearchItem item={item} />;
