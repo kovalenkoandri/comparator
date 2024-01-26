@@ -21,6 +21,8 @@ import { API_URL } from "../utils/Config";
 const { height, width } = Dimensions.get("window");
 
 export const Header = () => {
+  const [fromValue, setFromValue] = useState("");
+  const [toValue, setToValue] = useState("");
   const [keyword, setKeyword] = useState("");
   const [notFound, setNotFound] = useState(false);
   const [products, setProducts] = useState([]);
@@ -70,27 +72,47 @@ export const Header = () => {
         <TextInput
           maxLength={20}
           autoFocus
-          placeholder="Введіть код"
+          placeholder="model to compare..."
           value={keyword}
           onChangeText={(value) => setKeyword(value)}
-          style={styles.input}
-          // mode="outlined"
-          outlineStyle={{ borderRadius: 12, borderColor: Colors.blue }}
+          style={[{ width: width - 30 }, styles.input]}
+          placeholderTextColor={Colors.white}
         />
-        <TouchableOpacity
-          disabled={!isButtonActive || keyword.length < 3}
-          onPress={() => onSubmit()}
-          // mode="elevated"
-          style={[
-            styles.button,
-            {
-              backgroundColor:
-                keyword.length < 3 || !isButtonActive ? Colors.grey : Colors.bg,
-            },
-          ]}
-        >
-          <Text style={styles.text}>GO!</Text>
-        </TouchableOpacity>
+        <View style={{ flexDirection: "row" }}>
+          <TextInput
+            placeholderTextColor={Colors.white}
+            style={[{ width: 130 }, styles.input]}
+            placeholder="From"
+            keyboardType="numeric"
+            value={fromValue}
+            onChangeText={(text) => setFromValue(text)}
+          />
+
+          <TextInput
+            placeholderTextColor={Colors.white}
+            style={[{ width: 130 }, styles.input]}
+            placeholder="To"
+            keyboardType="numeric"
+            value={toValue}
+            onChangeText={(text) => setToValue(text)}
+          />
+
+          <TouchableOpacity
+            disabled={!isButtonActive || keyword.length < 3}
+            onPress={() => onSubmit()}
+            style={[
+              styles.button,
+              {
+                backgroundColor:
+                  keyword.length < 3 || !isButtonActive
+                    ? Colors.grey
+                    : Colors.bg,
+              },
+            ]}
+          >
+            <Text style={styles.text}>GO!</Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -102,16 +124,12 @@ export const Header = () => {
               width,
               flex: 1,
               marginHorizontal: 20,
-              marginTop: Platform.OS === "android" ? 0 : height < 668 ? 0 : 60,
             }}
           >
             {notFound ? (
               <HeaderTextExample>
-                <Text
-                  // variant="headlineMedium"
-                  style={styles.searchResultNotFound}
-                >
-                  За даним кодом товар не знайдено
+                <Text style={styles.searchResultNotFound}>
+                  Product was not found
                 </Text>
               </HeaderTextExample>
             ) : (
@@ -135,13 +153,13 @@ export const Header = () => {
 const styles = StyleSheet.create({
   flatList: {},
   input_box: {
+    marginTop: 30,
     flexDirection: "column",
     alignItems: "center",
     backgroundColor: Colors.bluegreen,
   },
   input: {
-    width: "90%",
-    height: 80,
+    height: 88,
     fontSize: 36,
     margin: 8,
     backgroundColor: Colors.dark,
@@ -157,13 +175,12 @@ const styles = StyleSheet.create({
     padding: 4,
   },
   button: {
-    marginTop: 16,
+    margin: 8,
+    height: 88,
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 6,
-    paddingHorizontal: 32,
+    paddingHorizontal: 24,
     borderRadius: 12,
-    elevation: 3,
     backgroundColor: Colors.bg,
   },
   text: {
