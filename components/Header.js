@@ -72,7 +72,10 @@ export const Header = () => {
     setFromValue(text);
     if (parseFloat(text)) {
       setFilteredProducts(() => {
-        const filteredFrom = products.filter((el) => {
+        const filteredTo = products.filter((el) => {
+          return parseFloat(el.price) <= parseFloat(toValue);
+        });
+        const filteredFrom = filteredTo.filter((el) => {
           return parseFloat(el.price) >= parseFloat(text);
         });
         filteredFrom.sort((a, b) => a.price - b.price);
@@ -80,23 +83,45 @@ export const Header = () => {
       });
       setFiltered(true);
     } else {
-      setFiltered(false);
+      if (toValue) {
+        setFilteredProducts(() => {
+          const filteredTo = products.filter((el) => {
+            return parseFloat(el.price) <= parseFloat(toValue);
+          });
+          filteredTo.sort((a, b) => a.price - b.price);
+          return filteredTo;
+        });
+      } else {
+        setFiltered(false);
+      }
     }
   };
   const handleTo = (text) => {
     setToValue(text);
     if (parseFloat(text) || parseFloat(text) === 0) {
       setFilteredProducts(() => {
-        const filteredFrom = products.filter((el) => {
-          console.log(el.price);
+        const filteredTo = products.filter((el) => {
           return parseFloat(el.price) <= parseFloat(text);
+        });
+        const filteredFrom = filteredTo.filter((el) => {
+          return parseFloat(el.price) >= parseFloat(fromValue);
         });
         filteredFrom.sort((a, b) => a.price - b.price);
         return filteredFrom;
       });
       setFiltered(true);
     } else {
-      setFiltered(false);
+      if (fromValue) {
+        setFilteredProducts(() => {
+          const filteredFrom = products.filter((el) => {
+            return parseFloat(el.price) >= parseFloat(fromValue);
+          });
+          filteredFrom.sort((a, b) => a.price - b.price);
+          return filteredFrom;
+        });
+      } else {
+        setFiltered(false);
+      }
     }
   };
   return (
