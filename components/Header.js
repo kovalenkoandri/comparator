@@ -45,8 +45,8 @@ export const Header = () => {
     }));
     data.length === 0 ? setNotFound(true) : setNotFound(false);
 
-    setProducts((prevProducts) => {
-      const dups = [...prevProducts, ...data];
+    setProducts(() => {
+      const dups = [...data];
       const filteredDups = dups.filter((value, index, self) => {
         return (
           index === self.findIndex((t) => t.siteAddress === value.siteAddress)
