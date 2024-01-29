@@ -3,9 +3,7 @@
     "name": "comparator",
     "slug": "comparator",
     "privacy": "public",
-    "platforms": [
-      "android"
-    ],
+    "platforms": ["android"],
     "orientation": "default",
     "githubUrl": "https://github.com/kovalenkoandri/price-comparator-front",
     "icon": "./assets/icon.png",
@@ -14,12 +12,10 @@
       "resizeMode": "contain",
       "backgroundColor": "#353542"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "android": {
       "package": "com.kovalenkoandrii.comparator",
-      "versionCode": 2
+      "versionCode": 1
     },
     "description": "Price comparator",
     "owner": "kovalenkoandrii",
@@ -38,6 +34,9 @@
       "eas": {
         "projectId": "344f45be-1cf2-44ef-83e0-32c2930f69b9"
       }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/344f45be-1cf2-44ef-83e0-32c2930f69b9"
     }
   }
 }

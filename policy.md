@@ -1,42 +1,62 @@
-Privacy Policy for "Price Comparator"
+**Privacy Policy**
 
-Effective Date: 2024-01-08
+kovalenkoandri built the Price Comparator app as an Open Source app. This SERVICE is provided by kovalenkoandri at no cost and is intended for use as is.
 
-1. Overview
+This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
 
-Thank you for using "Price Comparator". This Privacy Policy is designed to help you understand how we collect, use, and safeguard your personal information. By using our app, you agree to the practices outlined in this policy.
+If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.
 
-2. Information We Collect
+The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which are accessible at Price Comparator unless otherwise defined in this Privacy Policy.
 
-We may collect the following types of information:
+**Information Collection and Use**
 
-Personal Information: When you use our app, we may collect personal information such as your name, email address, and other details you provide.
+For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information. The information that I request will be retained on your device and is not collected by me in any way.
 
-Usage Data: We collect information about how you interact with our app, including pages visited, features used, and other statistical data.
+The app does use third-party services that may collect information used to identify you.
 
-3. How We Use Your Information
+Link to the privacy policy of third-party service providers used by the app
 
-We use the collected information for various purposes, including:
+*   [Google Play Services](https://www.google.com/policies/privacy/)
 
-Providing and maintaining our app.
-Improving, personalizing, and expanding our app's features.
-Sending you updates, promotional content, and other communications.
-4. Data Security
+**Log Data**
 
-We take reasonable measures to protect your information from unauthorized access, alteration, disclosure, or destruction.
+I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.
 
-5. Third-Party Services
+**Cookies**
 
-Our app may use third-party services, and their use of your information is governed by their privacy policies.
+Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory.
 
-6. Your Choices
+This Service does not use these “cookies” explicitly. However, the app may use third-party code and libraries that use “cookies” to collect information and improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.
 
-You have the right to opt-out of certain data collection and use. Contact us at barnuistyl@gmail.com for assistance.
+**Service Providers**
 
-7. Changes to this Privacy Policy
+I may employ third-party companies and individuals due to the following reasons:
 
-We reserve the right to modify this Privacy Policy at any time. Changes will be effective immediately upon posting on our app.
+*   To facilitate our Service;
+*   To provide the Service on our behalf;
+*   To perform Service-related services; or
+*   To assist us in analyzing how our Service is used.
 
-8. Contact Us
+I want to inform users of this Service that these third parties have access to their Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.
 
-If you have questions or concerns about this Privacy Policy, please contact us at barnuistyl@gmail.com.
+**Security**
+
+I value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and I cannot guarantee its absolute security.
+
+**Links to Other Sites**
+
+This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by me. Therefore, I strongly advise you to review the Privacy Policy of these websites. I have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
+
+**Children’s Privacy**
+
+These Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13 years of age. In the case I discover that a child under 13 has provided me with personal information, I immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to do the necessary actions.
+
+**Changes to This Privacy Policy**
+
+I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page.
+
+This policy is effective as of 2024-01-29
+
+**Contact Us**
+
+If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at barnuistyl@gmail.com.
